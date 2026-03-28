@@ -154,8 +154,40 @@ Static HTML/CSS/JS prototype. Key files:
 | Contact | "Laten we praten" | - |
 | Footer | "Met zorg gebouwd" | - |
 
+## UX Review Findings (2026-03-28)
+
+### Critical
+- **Hero needs subtitle** — add explanatory text below h1 (e.g. "Ik bouw digitale oplossingen die het saaie werk van je bord halen")
+- **CTAs too vague** — replace "Resultaten spreken" → "Bekijk projecten", "Samen groeien?" → "Neem contact op"
+- **Right-aligned body text** in About card — hard to read, change to left-aligned
+
+### High impact
+- **Orbiting tech logos alienate target audience** — club boards see Java/React and think "not for me". Consider showing outcomes (apps, time saved) instead of tools
+- **Section order** — consider Mission before About (visitors ask "what do you do?" before "who are you?")
+
+### Medium impact
+- **Add CTAs after Projects and Testimonials** — path to contact at moment of highest conviction
+- **Remove auto-advancing carousel** — UX anti-pattern, takes control away while reading
+- **Buzzword gutter (20vw)** — repeats value cards, consider reducing or removing
+- **Add pricing indication** — brand promises transparency but no cost signal exists
+- **Testimonial stagger on mobile** — may look broken, consider one-card-at-a-time
+- **Pause orbit animation off-screen** — IntersectionObserver to save mobile battery
+
+### Quick wins
+- Add trust signal near hero ("X clubs en bedrijven geholpen")
+- Add hover effect on non-center testimonial cards (affordance)
+- Reduce hero decorative elements (birds+cloud may be unnecessary with trees)
+
+## Deployment
+
+- **GitHub Pages**: https://crevitsjoachim-pixel.github.io/MyPortfolioSite/
+- **Repo**: https://github.com/crevitsjoachim-pixel/MyPortfolioSite
+- **Workflow**: `.github/workflows/deploy.yml` deploys `prototype/` folder on push to main
+- **Settings required**: GitHub Pages source must be set to "GitHub Actions" in repo settings
+
 ## Next Steps
 
-1. Optionally: Design in Google Stitch using prompts from `design-prompt.md`, export to Figma
-2. Resume BMAD dev stage — implement Sprint 1 (WordPress setup + child theme + CPTs)
-3. Build WordPress theme matching the prototype design
+1. Address UX review critical/high items above
+2. Optionally: Design in Google Stitch using prompts from `design-prompt.md`, export to Figma
+3. Resume BMAD dev stage — implement Sprint 1 (WordPress setup + child theme + CPTs)
+4. Build WordPress theme matching the prototype design
