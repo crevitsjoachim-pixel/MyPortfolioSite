@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enabl'IT — Digitale oplossingen voor clubs &amp; bedrijven</title>
+  <meta name="description" content="Ik bouw digitale oplossingen die het saaie werk van je bord halen, zodat jij je kunt focussen op wat echt telt: je vak, je klanten, je passie.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigatie -->
+  <header class="floating-header" id="site-header">
+    <nav class="floating-header__nav">
+      <a href="#" class="floating-header__logo">Enabl'<span class="floating-header__logo-accent">IT</span></a>
+      <div class="floating-header__links" id="nav-menu">
+        <a href="#about" class="floating-header__link">Over mij</a>
+        <a href="#mission" class="floating-header__link">Missie</a>
+        <a href="#projects" class="floating-header__link">Projecten</a>
+        <a href="#testimonials" class="floating-header__link">Referenties</a>
+      </div>
+      <div class="floating-header__actions">
+        <a href="#contact" class="floating-header__cta">Contact</a>
+        <button class="floating-header__toggle" id="nav-toggle" aria-label="Menu openen" aria-expanded="false">
+          <span class="floating-header__hamburger"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile slide-out menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu__overlay" id="mobile-menu-overlay"></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Menu sluiten">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="4" x2="16" y2="16"/><line x1="16" y1="4" x2="4" y2="16"/>
+          </svg>
+        </button>
+        <div class="mobile-menu__links">
+          <a href="#about" class="mobile-menu__link">Over mij</a>
+          <a href="#mission" class="mobile-menu__link">Missie</a>
+          <a href="#projects" class="mobile-menu__link">Projecten</a>
+          <a href="#testimonials" class="mobile-menu__link">Referenties</a>
+        </div>
+        <div class="mobile-menu__footer">
+          <a href="#contact" class="mobile-menu__cta">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <!-- Generatieve bomen -->
+    <canvas id="hero-tree-left" class="hero__tree hero__tree--left" aria-hidden="true"></canvas>
+    <canvas id="hero-tree-right" class="hero__tree hero__tree--right" aria-hidden="true"></canvas>
+    <!-- Floating birds & cloud -->
+    <div class="hero__shapes" aria-hidden="true">
+      <div class="hero__shape hero__shape--bird-1">
+        <svg width="36" height="18" viewBox="0 0 36 18" fill="none">
+          <path d="M2,14 Q10,2 18,10 Q26,2 34,14" stroke="var(--color-text)" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.45"/>
+        </svg>
+      </div>
+      <div class="hero__shape hero__shape--bird-2">
+        <svg width="28" height="14" viewBox="0 0 28 14" fill="none">
+          <path d="M2,11 Q8,2 14,8 Q20,2 26,11" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.35"/>
+        </svg>
+      </div>
+      <div class="hero__shape hero__shape--bird-3">
+        <svg width="22" height="11" viewBox="0 0 22 11" fill="none">
+          <path d="M1,9 Q6,1 11,6 Q16,1 21,9" stroke="var(--color-text)" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.28"/>
+        </svg>
+      </div>
+      <div class="hero__shape hero__shape--cloud">
+        <svg width="80" height="32" viewBox="0 0 80 32" fill="none">
+          <path d="M16,24 Q4,24 4,16 Q4,10 12,9 Q14,2 24,4 Q30,0 38,4 Q44,1 50,5 Q58,2 62,8 Q72,8 74,16 Q76,24 64,24 Z" fill="var(--color-accent-glow)" stroke="var(--color-accent-soft)" stroke-width="1" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero__content">
+      <div class="site-brand">
+        <a href="#" class="site-brand__name">Enabl'<span class="site-brand__accent">IT</span></a>
+      </div>
+      <h1 class="hero__title">Technologie die voor jou werkt</h1>
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">Resultaten spreken</a>
+        <a href="#contact" class="btn btn--secondary">Samen groeien?</a>
+      </div>
+    </div>
+    <div class="hero__gradient" aria-hidden="true"></div>
+    <!-- Scroll hint below surface -->
+    <div class="hero__dig-hint dig">
+      <span>Graaf dieper</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="8" y1="2" x2="8" y2="14"/><polyline points="3,9 8,14 13,9"/>
+      </svg>
+    </div>
+    <!-- Full-width water surface line -->
+    <div class="hero__waterline" aria-hidden="true">
+      <svg class="hero__waterline-svg" preserveAspectRatio="none" viewBox="0 0 1440 12">
+        <path d="M0,6 C60,3 120,8 180,5 C240,2 300,8 360,6 C420,4 480,9 540,5 C600,2 660,7 720,6 C780,5 840,9 900,5 C960,2 1020,8 1080,6 C1140,4 1200,8 1260,5 C1320,3 1380,7 1440,6" fill="none" stroke="rgba(168,223,196,0.35)" stroke-width="1.8"/>
+        <path d="M0,9 C80,7 140,11 220,8 C300,5 360,10 440,9 C520,7 600,11 680,8 C760,6 840,10 920,9 C1000,7 1080,11 1160,8 C1240,6 1320,10 1440,9" fill="none" stroke="rgba(141,191,165,0.2)" stroke-width="1.2"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Underground -->
+  <section class="underground" id="underground" aria-label="Verborgen ondergrond">
+    <div class="underground__layers" aria-hidden="true"></div>
+
+
+
+    <!-- Buzzwords — left gutter, scattered between screen edge and cards -->
+    <div class="underground__scattered" aria-hidden="true">
+      <!-- About section (2) — dark bg, light icons -->
+      <div class="underground__buzzword dig" style="top: 80px; left: 5vw;">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <polygon points="13,1 24,9 20,24 6,24 2,9" fill="rgba(168,223,196,0.28)" stroke="rgba(168,223,196,0.6)" stroke-width="1.5"/>
+        </svg>
+        <span class="underground__label">Nieuwsgierig</span>
+      </div>
+      <div class="underground__buzzword dig" style="top: 260px; left: 11vw;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" fill="rgba(168,223,196,0.1)" stroke="rgba(168,223,196,0.45)" stroke-width="1.5"/>
+          <polygon points="12,4 14,12 12,20 10,12" fill="rgba(168,223,196,0.2)" stroke="rgba(168,223,196,0.35)" stroke-width="1"/>
+        </svg>
+        <span class="underground__label">Eerlijk</span>
+      </div>
+
+      <!-- Mission section (3) — transitioning bg -->
+      <div class="underground__buzzword dig" style="top: 460px; left: 9vw;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle cx="8" cy="8" r="5.5" fill="none" stroke="rgba(190,180,120,0.55)" stroke-width="1.5"/>
+          <line x1="12" y1="11" x2="21" y2="20" stroke="rgba(190,180,120,0.55)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="underground__label">Oplossingsgericht</span>
+      </div>
+      <div class="underground__buzzword dig" style="top: 620px; left: 2vw;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <ellipse cx="12" cy="14" rx="5" ry="7" fill="rgba(140,195,165,0.2)" stroke="rgba(140,195,165,0.5)" stroke-width="1.5"/>
+          <path d="M12,6 C12,2 16,1 17,3.5" fill="none" stroke="rgba(140,195,165,0.45)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="underground__label">Toewijding</span>
+      </div>
+      <div class="underground__buzzword dig" style="top: 800px; left: 3vw;">
+        <svg width="24" height="30" viewBox="0 0 24 30" fill="none">
+          <polygon points="12,0 20,8 17,30 7,30 4,8" fill="rgba(120,175,145,0.15)" stroke="rgba(120,175,145,0.4)" stroke-width="1.5"/>
+        </svg>
+        <span class="underground__label">Doorzettingsvermogen</span>
+      </div>
+
+      <!-- Projects section (4) — lighter bg, darker icons -->
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 1000px; left: 6vw;">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <circle cx="13" cy="13" r="10" fill="rgba(77,122,100,0.08)" stroke="rgba(77,122,100,0.3)" stroke-width="1.5"/>
+          <path d="M9 9L17 17M17 9L9 17" stroke="rgba(77,122,100,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="underground__label">Vakmanschap</span>
+      </div>
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 1160px; left: 10vw;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="rgba(77,122,100,0.06)" stroke="rgba(77,122,100,0.28)" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="3" fill="rgba(77,122,100,0.2)"/>
+        </svg>
+        <span class="underground__label">Creativiteit</span>
+      </div>
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 1320px; left: 1vw;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 3L3 9V18L12 24L21 18V9L12 3Z" fill="rgba(77,122,100,0.06)" stroke="rgba(77,122,100,0.28)" stroke-width="1.5"/>
+          <path d="M9 13L11 15L16 10" stroke="rgba(77,122,100,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="underground__label">Nuchter</span>
+      </div>
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 1490px; left: 11vw;">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <circle cx="13" cy="13" r="10" fill="rgba(77,122,100,0.06)" stroke="rgba(77,122,100,0.25)" stroke-width="1.5"/>
+          <path d="M8 13C8 10 10 8 13 8" stroke="rgba(77,122,100,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18 13C18 16 16 18 13 18" stroke="rgba(77,122,100,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="13" cy="13" r="2" fill="rgba(77,122,100,0.25)"/>
+        </svg>
+        <span class="underground__label">Hands-on</span>
+      </div>
+
+      <!-- Testimonials section (3) — light bg, dark icons -->
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 1680px; left: 4vw;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" fill="rgba(77,122,100,0.06)" stroke="rgba(77,122,100,0.25)" stroke-width="1.5"/>
+          <path d="M8 12L11 15L17 9" stroke="rgba(77,122,100,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="underground__label">Leergierig</span>
+      </div>
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 1850px; left: 8vw;">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path d="M6 20V11L13 5L20 11V20L13 26L6 20Z" fill="rgba(77,122,100,0.06)" stroke="rgba(77,122,100,0.25)" stroke-width="1.5"/>
+          <path d="M10 16L13 13L16 16" stroke="rgba(77,122,100,0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="13" y1="13" x2="13" y2="21" stroke="rgba(77,122,100,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="underground__label">Optimistisch</span>
+      </div>
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 2020px; left: 8vw;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" fill="rgba(77,122,100,0.06)" stroke="rgba(77,122,100,0.25)" stroke-width="1.5"/>
+          <path d="M10,12 C11,9 14,8 16,10 C17,11 17,14 15,16 C13,17 11,16 10,14" fill="none" stroke="rgba(77,122,100,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="underground__label">Betrouwbaar</span>
+      </div>
+
+      <!-- Extra 5 spread deeper -->
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 2200px; left: 12vw;">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <circle cx="11" cy="11" r="8" fill="rgba(77,122,100,0.05)" stroke="rgba(77,122,100,0.22)" stroke-width="1.5"/>
+          <line x1="11" y1="6" x2="11" y2="16" stroke="rgba(77,122,100,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="6" y1="11" x2="16" y2="11" stroke="rgba(77,122,100,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="underground__label">Flexibel</span>
+      </div>
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 2400px; left: 3vw;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect x="4" y="4" width="16" height="16" rx="3" fill="rgba(77,122,100,0.05)" stroke="rgba(77,122,100,0.2)" stroke-width="1.5"/>
+          <path d="M8 12H16M12 8V16" stroke="rgba(77,122,100,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="underground__label">Techneut</span>
+      </div>
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 2580px; left: 9vw;">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <polygon points="11,1 21,8 18,19 4,19 1,8" fill="rgba(77,122,100,0.05)" stroke="rgba(77,122,100,0.2)" stroke-width="1.5"/>
+        </svg>
+        <span class="underground__label">Vindingrijk</span>
+      </div>
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 2760px; left: 7vw;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" fill="rgba(77,122,100,0.05)" stroke="rgba(77,122,100,0.2)" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="4" fill="none" stroke="rgba(77,122,100,0.18)" stroke-width="1"/>
+          <circle cx="12" cy="12" r="1.5" fill="rgba(77,122,100,0.2)"/>
+        </svg>
+        <span class="underground__label">Realistisch</span>
+      </div>
+      <div class="underground__buzzword underground__buzzword--dark dig" style="top: 2950px; left: 10vw;">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M5 17V9L11 4L17 9V17L11 22L5 17Z" fill="rgba(77,122,100,0.05)" stroke="rgba(77,122,100,0.2)" stroke-width="1.5"/>
+        </svg>
+        <span class="underground__label">Passie</span>
+      </div>
+    </div>
+
+    <!-- Content cards -->
+    <div class="underground__content">
+      <div class="underground__card underground__card--about" id="about">
+        <div class="profile-card reveal">
+          <div class="profile-card__layout">
+            <div class="profile-card__orbits" id="orbiting-skills">
+              <!-- Central icon -->
+              <div class="orbit-center">
+                <div class="orbit-center__glow orbit-center__glow--cyan"></div>
+                <div class="orbit-center__glow orbit-center__glow--purple"></div>
+                <svg class="orbit-center__icon" viewBox="0 0 24 24" fill="none" stroke="url(#orbit-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <defs><linearGradient id="orbit-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#A8DFC4"/><stop offset="100%" stop-color="#5BBFA0"/></linearGradient></defs>
+                  <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                </svg>
+              </div>
+              <!-- Orbit rings -->
+              <div class="orbit-ring orbit-ring--inner"></div>
+              <div class="orbit-ring orbit-ring--middle"></div>
+              <div class="orbit-ring orbit-ring--outer"></div>
+              <!-- Inner orbit: Java, Python, JavaScript -->
+              <div class="orbit-skill" data-orbit="inner" data-phase="0" data-label="Java">
+                <svg viewBox="0 0 24 24"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.762.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0 0-8.216 2.051-4.292 6.573" fill="#E76F00"/><path d="M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.929 4.562 0 0 .07-.062.091-.118" fill="#5382A1"/><path d="M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.889 4.832 0 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.189-7.627" fill="#E76F00"/><path d="M9.734 23.924c4.322.277 10.959-.154 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0 0 .553.457 3.393.639" fill="#5382A1"/></svg>
+              </div>
+              <div class="orbit-skill" data-orbit="inner" data-phase="2.094" data-label="Python">
+                <svg viewBox="0 0 24 24"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.96 3.403 5.96h2.03v-2.867s-.109-3.403 3.35-3.403h5.766s3.24.052 3.24-3.132V3.195S18.28 0 11.914 0zM8.708 1.85c.578 0 1.046.468 1.046 1.046s-.468 1.046-1.046 1.046-1.046-.468-1.046-1.046.468-1.046 1.046-1.046z" fill="#366C9C"/><path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752h-5.814v-.826H20.1S24 18.211 24 12.031c0-6.18-3.403-5.96-3.403-5.96h-2.03v2.867s.109 3.403-3.35 3.403H9.451s-3.24-.052-3.24 3.132v5.332S5.72 24 12.086 24zm3.206-1.85c-.578 0-1.046-.468-1.046-1.046s.468-1.046 1.046-1.046 1.046.468 1.046 1.046-.468 1.046-1.046 1.046z" fill="#FFC836"/></svg>
+              </div>
+              <div class="orbit-skill" data-orbit="inner" data-phase="4.189" data-label="JavaScript">
+                <svg viewBox="0 0 630 630"><rect width="630" height="630" fill="#F7DF1E"/><path d="M423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 36l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z" fill="#323330"/></svg>
+              </div>
+              <!-- Middle orbit: React, Spring, WordPress -->
+              <div class="orbit-skill" data-orbit="middle" data-phase="0" data-label="React">
+                <svg viewBox="0 0 24 24" fill="none"><g stroke="#61DAFB" stroke-width="1"><circle cx="12" cy="12" r="2.05" fill="#61DAFB"/><ellipse cx="12" cy="12" rx="11" ry="4.2"/><ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(120 12 12)"/></g></svg>
+              </div>
+              <div class="orbit-skill" data-orbit="middle" data-phase="2.094" data-label="Spring">
+                <svg viewBox="0 0 24 24"><path d="M21.854 2.146C20.124.397 16.632.078 14.17.942c-1.877.658-3.57 1.86-4.903 3.48C7.938 5.98 7.107 7.854 6.78 9.854c-.327 1.998-.15 4.093.5 5.897.5 1.383 1.27 2.632 2.25 3.654-.04.058-.08.116-.118.176-.78 1.23-.957 2.48-.49 3.426.56 1.138 1.906 1.553 2.723 1.553.35 0 .648-.07.867-.148 1.148-.41 2.074-1.394 2.527-2.693.42-1.206.37-2.56-.14-3.81a9.577 9.577 0 001.74-1.47c1.65-1.732 2.688-3.986 2.936-6.37.252-2.414-.282-4.79-1.72-6.923zM11.274 22.07c-.35 1.01-1.07 1.766-1.922 2.07-.578.206-1.254.14-1.59-.543-.34-.692-.098-1.63.554-2.66.176-.278.383-.555.618-.827.485.5 1.028.94 1.62 1.31.226.14.46.27.698.39.02.087.03.174.03.26h-.008zm8.32-9.26c-.22 2.128-1.136 4.14-2.598 5.674a8.456 8.456 0 01-1.603 1.348c-.67-.23-1.3-.543-1.876-.928a7.99 7.99 0 01-1.637-1.398c-.082-.096-.16-.195-.237-.295 1.633-.98 2.87-2.497 3.492-4.29.624-1.796.583-3.766-.116-5.534a8.066 8.066 0 00-.712-1.393c.248-.084.5-.16.755-.224 1.953-.497 3.828-.36 5.153.622 1.24 1.84 1.624 3.87 1.38 6.418z" fill="#6DB33F"/><circle cx="18.5" cy="3.2" r="1.5" fill="#6DB33F"/></svg>
+              </div>
+              <div class="orbit-skill" data-orbit="middle" data-phase="4.189" data-label="WordPress">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zM3.2 12c0-1.39.327-2.705.907-3.872L8.05 20.36A8.815 8.815 0 013.2 12zm8.8 8.8a8.76 8.76 0 01-2.853-.474l3.03-8.804 3.103 8.5c.02.05.044.096.07.14A8.73 8.73 0 0112 20.8zm1.227-12.93c.608-.032 1.156-.096 1.156-.096.544-.064.48-.864-.064-.832 0 0-1.636.128-2.692.128-1.024 0-2.724-.128-2.724-.128-.544-.032-.608.8-.064.832 0 0 .516.064 1.06.096l1.576 4.32-2.213 6.638L6.392 7.87c.608-.032 1.156-.096 1.156-.096.544-.064.48-.864-.064-.832 0 0-1.636.128-2.692.128-.19 0-.413-.005-.65-.013A8.78 8.78 0 0112 3.2c2.18 0 4.166.794 5.702 2.105-.036-.002-.072-.008-.11-.008-1.024 0-1.748.89-1.748 1.848 0 .864.496 1.584 1.024 2.448.396.696.86 1.584.86 2.87 0 .89-.34 1.92-.792 3.358l-1.04 3.468-3.67-10.918zM17.1 19.88l3.076-8.89c.576-1.44.768-2.592.768-3.614 0-.372-.024-.717-.07-1.04A8.79 8.79 0 0120.8 12a8.815 8.815 0 01-3.7 7.88z" fill="#21759B"/></svg>
+              </div>
+              <!-- Outer orbit: Azure, AI, & meer -->
+              <div class="orbit-skill" data-orbit="outer" data-phase="0" data-label="Azure">
+                <svg viewBox="0 0 24 24"><path d="M13.05 4.24L7.56 18.05l-4.08.04L9.11 4.24h3.94zM14.28 6.09L17.26 13.66l-6.58 5.51 9.08-.03h1.76L14.28 6.09z" fill="#0089D6"/></svg>
+              </div>
+              <div class="orbit-skill" data-orbit="outer" data-phase="2.094" data-label="AI">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3" stroke="#A8DFC4" stroke-width="1.5"/><circle cx="6" cy="16" r="2" stroke="#A8DFC4" stroke-width="1.5"/><circle cx="18" cy="16" r="2" stroke="#A8DFC4" stroke-width="1.5"/><line x1="12" y1="11" x2="7" y2="14.5" stroke="#A8DFC4" stroke-width="1.2"/><line x1="12" y1="11" x2="17" y2="14.5" stroke="#A8DFC4" stroke-width="1.2"/><line x1="6" y1="16" x2="18" y2="16" stroke="#A8DFC4" stroke-width="1.2" stroke-dasharray="2 2"/></svg>
+              </div>
+              <div class="orbit-skill orbit-skill--more" data-orbit="outer" data-phase="4.189" data-label="& meer...">
+                <span class="orbit-skill__dots">...</span>
+              </div>
+            </div>
+            <div class="profile-card__body">
+              <div class="profile-card__header">
+                <h2 class="profile-card__name">Over mij</h2>
+                <div class="profile-card__avatar">
+                  <div class="profile-card__avatar-inner">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80" alt="Portretfoto"/>
+                    <span class="profile-card__avatar-fallback" aria-hidden="true">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p class="profile-card__title">Software-architect &amp; digitale vakman</p>
+              <p class="profile-card__desc">Overdag software-architect, 's avonds en in het weekend bouwer van digitale oplossingen uit passie. Met jarenlange ervaring in het ontwerpen en bouwen van enterprise-systemen breng ik architectuurniveau-denken naar projecten van elke omvang.</p>
+              <p class="profile-card__desc">Ik ben de persoon die bij je komt zitten, naar je uitdagingen luistert, de juiste oplossing ontwerpt en die ook effectief bouwt. Gewoon &eacute;&eacute;n persoon die zowel jouw wereld als de technische wereld begrijpt.</p>
+              <p class="profile-card__desc">Zie me als je lokale digitale vakman — geen groot bureau. Ik kom langs, leg alles uit in gewone taal, en lever wat ik beloofd heb.</p>
+              <div class="profile-card__socials">
+                <a href="#" class="profile-card__social" aria-label="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="#" class="profile-card__social" aria-label="GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  </svg>
+                </a>
+                <a href="mailto:hello@example.com" class="profile-card__social" aria-label="E-mail">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="underground__card" id="mission">
+        <div class="mission-grid">
+          <!-- Title/text spans top-left 2 cells -->
+          <div class="mission-grid__intro reveal">
+            <h2 class="section__title">Missie &amp; Waarden</h2>
+            <p>Ik help clubs en kleine bedrijven om saai, repetitief werk te elimineren met digitale oplossingen op maat. Geen bureau dat je dingen verkoopt die je niet nodig hebt — een partner die eerlijk zegt wat &eacute;cht helpt.</p>
+          </div>
+          <!-- 2 cards top-right -->
+          <div class="value-card reveal">
+            <div class="value-card__icon">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+                <path d="M20 4L4 12V28L20 36L36 28V12L20 4Z" stroke="var(--color-accent)" stroke-width="2" fill="var(--color-accent-glow)"/>
+                <path d="M15 20L19 24L26 16" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="value-card__title">Betrouwbaarheid</h3>
+            <p class="value-card__desc">Op tijd komen, beloftes nakomen.</p>
+          </div>
+          <div class="value-card reveal">
+            <div class="value-card__icon">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="16" stroke="var(--color-accent)" stroke-width="2" fill="var(--color-accent-glow)"/>
+                <path d="M14 20H26M20 14V26" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="value-card__title">Eerlijkheid</h3>
+            <p class="value-card__desc">Als een spreadsheet volstaat, zeg ik dat.</p>
+          </div>
+          <!-- 4 cards bottom row -->
+          <div class="value-card reveal">
+            <div class="value-card__icon">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+                <rect x="6" y="6" width="28" height="28" rx="6" stroke="var(--color-accent)" stroke-width="2" fill="var(--color-accent-glow)"/>
+                <circle cx="20" cy="20" r="4" fill="var(--color-accent)"/>
+              </svg>
+            </div>
+            <h3 class="value-card__title">Transparantie</h3>
+            <p class="value-card__desc">Open over prijzen en aanpak.</p>
+          </div>
+          <div class="value-card reveal">
+            <div class="value-card__icon">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+                <path d="M8 32L20 8L32 32H8Z" stroke="var(--color-accent)" stroke-width="2" fill="var(--color-accent-glow)" stroke-linejoin="round"/>
+                <circle cx="20" cy="24" r="2" fill="var(--color-accent)"/>
+              </svg>
+            </div>
+            <h3 class="value-card__title">Kwaliteit</h3>
+            <p class="value-card__desc">Gebouwd om lang mee te gaan.</p>
+          </div>
+          <div class="value-card reveal">
+            <div class="value-card__icon">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="16" stroke="var(--color-accent)" stroke-width="2" fill="var(--color-accent-glow)"/>
+                <path d="M13 20C13 16 16 13 20 13" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M27 20C27 24 24 27 20 27" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="20" cy="20" r="3" fill="var(--color-accent)"/>
+              </svg>
+            </div>
+            <h3 class="value-card__title">Toegankelijkheid</h3>
+            <p class="value-card__desc">Geen IT-kennis nodig.</p>
+          </div>
+          <div class="value-card reveal">
+            <div class="value-card__icon">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+                <path d="M10 28V16L20 8L30 16V28L20 36L10 28Z" stroke="var(--color-accent)" stroke-width="2" fill="var(--color-accent-glow)"/>
+                <path d="M16 22L20 18L24 22" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="20" y1="18" x2="20" y2="28" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="value-card__title">Onafhankelijkheid</h3>
+            <p class="value-card__desc">Geen vendor lock-in. Nooit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="underground__card underground__card--carousel" id="projects">
+        <div class="project-carousel reveal" id="project-carousel">
+          <!-- Left: labels -->
+          <div class="carousel__labels">
+            <div class="carousel__labels-fade carousel__labels-fade--top"></div>
+            <div class="carousel__labels-fade carousel__labels-fade--bottom"></div>
+            <div class="carousel__labels-track">
+              <button class="carousel__chip carousel__chip--active" data-index="0">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
+                <span>Boogschietclub App</span>
+              </button>
+              <button class="carousel__chip" data-index="1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="14" y2="14"/></svg>
+                <span>Offerte-automatisering</span>
+              </button>
+              <button class="carousel__chip" data-index="2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="7" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="8" r="1" fill="currentColor" stroke="none"/></svg>
+                <span>Deze portfoliosite</span>
+              </button>
+            </div>
+          </div>
+          <!-- Right: cards -->
+          <div class="carousel__stage">
+            <div class="carousel__card carousel__card--active" data-index="0">
+              <img src="https://images.unsplash.com/photo-1461896836934-bd45ba8b8f32?auto=format&fit=crop&w=600&q=80" alt="Boogschietclub App"/>
+              <div class="carousel__card-overlay">
+                <div class="carousel__card-stack">
+                  <span class="carousel__stack-icon" title="React Native"><svg viewBox="0 0 24 24" fill="none"><g stroke="#61DAFB" stroke-width="1"><circle cx="12" cy="12" r="2" fill="#61DAFB"/><ellipse cx="12" cy="12" rx="11" ry="4.2"/><ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(120 12 12)"/></g></svg></span>
+                  <span class="carousel__stack-icon" title="TypeScript"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="#3178C6"/><path d="M5.5 12.5h4v1.2h-1.4v4.3h-1.3v-4.3H5.5v-1.2zm5.3 0h1.3l1.5 2.1 1.5-2.1h1.3v5.5h-1.3v-3.3l-1.5 2.1-1.5-2.1v3.3h-1.3v-5.5z" fill="#fff"/></svg></span>
+                  <span class="carousel__stack-icon" title="Firebase"><svg viewBox="0 0 24 24"><path d="M3.89 15.67L6.14 2.35c.04-.24.35-.32.49-.12l2.42 3.93L3.89 15.67z" fill="#FFA000"/><path d="M20.54 18.13L18.14 4.15c-.04-.22-.3-.33-.48-.18L3.89 15.67l7.55 4.32c.35.2.78.2 1.13 0l8.02-1.86z" fill="#F57C00"/><path d="M10.8 8.9L9.05 6.16 3.89 15.67l6.91-6.77z" fill="#FFCA28"/><path d="M20.54 18.13L18.14 4.15c-.04-.22-.3-.33-.48-.18l-7.26 4.93 1.75 2.74 8.39 6.49z" fill="#F57C00"/></svg></span>
+                </div>
+                <p class="carousel__card-desc">iOS-app met live score-invoer. Meer dan 3 uur handwerk per wedstrijd ge&euml;limineerd.</p>
+              </div>
+            </div>
+            <div class="carousel__card" data-index="1">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80" alt="Offerte-automatisering"/>
+              <div class="carousel__card-overlay">
+                <div class="carousel__card-stack">
+                  <span class="carousel__stack-icon" title="Python"><svg viewBox="0 0 24 24"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.96 3.403 5.96h2.03v-2.867s-.109-3.403 3.35-3.403h5.766s3.24.052 3.24-3.132V3.195S18.28 0 11.914 0zM8.708 1.85c.578 0 1.046.468 1.046 1.046s-.468 1.046-1.046 1.046-1.046-.468-1.046-1.046.468-1.046 1.046-1.046z" fill="#366C9C"/><path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752h-5.814v-.826H20.1S24 18.211 24 12.031c0-6.18-3.403-5.96-3.403-5.96h-2.03v2.867s.109 3.403-3.35 3.403H9.451s-3.24-.052-3.24 3.132v5.332S5.72 24 12.086 24zm3.206-1.85c-.578 0-1.046-.468-1.046-1.046s.468-1.046 1.046-1.046 1.046.468 1.046 1.046-.468 1.046-1.046 1.046z" fill="#FFC836"/></svg></span>
+                  <span class="carousel__stack-icon" title="Java"><svg viewBox="0 0 24 24"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.762.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218" fill="#E76F00"/><path d="M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.889 4.832 0 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.189-7.627" fill="#E76F00"/></svg></span>
+                  <span class="carousel__stack-icon" title="Spring"><svg viewBox="0 0 24 24"><path d="M21.854 2.146C20.124.397 16.632.078 14.17.942c-1.877.658-3.57 1.86-4.903 3.48C7.938 5.98 7.107 7.854 6.78 9.854c-.327 1.998-.15 4.093.5 5.897.5 1.383 1.27 2.632 2.25 3.654-.04.058-.08.116-.118.176-.78 1.23-.957 2.48-.49 3.426.56 1.138 1.906 1.553 2.723 1.553.35 0 .648-.07.867-.148 1.148-.41 2.074-1.394 2.527-2.693.42-1.206.37-2.56-.14-3.81a9.577 9.577 0 001.74-1.47c1.65-1.732 2.688-3.986 2.936-6.37.252-2.414-.282-4.79-1.72-6.923z" fill="#6DB33F"/><circle cx="18.5" cy="3.2" r="1.5" fill="#6DB33F"/></svg></span>
+                </div>
+                <p class="carousel__card-desc">Offertetijd gedaald van 45 minuten naar 5. Professionele, consistente huisstijl.</p>
+              </div>
+            </div>
+            <div class="carousel__card" data-index="2">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Portfoliosite"/>
+              <div class="carousel__card-overlay">
+                <div class="carousel__card-stack">
+                  <span class="carousel__stack-icon" title="WordPress"><svg viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zM3.2 12c0-1.39.327-2.705.907-3.872L8.05 20.36A8.815 8.815 0 013.2 12zm8.8 8.8a8.76 8.76 0 01-2.853-.474l3.03-8.804 3.103 8.5c.02.05.044.096.07.14A8.73 8.73 0 0112 20.8zm1.227-12.93c.608-.032 1.156-.096 1.156-.096.544-.064.48-.864-.064-.832 0 0-1.636.128-2.692.128-1.024 0-2.724-.128-2.724-.128-.544-.032-.608.8-.064.832 0 0 .516.064 1.06.096l1.576 4.32-2.213 6.638L6.392 7.87c.608-.032 1.156-.096 1.156-.096.544-.064.48-.864-.064-.832 0 0-1.636.128-2.692.128-.19 0-.413-.005-.65-.013A8.78 8.78 0 0112 3.2c2.18 0 4.166.794 5.702 2.105-.036-.002-.072-.008-.11-.008-1.024 0-1.748.89-1.748 1.848 0 .864.496 1.584 1.024 2.448.396.696.86 1.584.86 2.87 0 .89-.34 1.92-.792 3.358l-1.04 3.468-3.67-10.918z" fill="#21759B"/></svg></span>
+                  <span class="carousel__stack-icon" title="CSS3"><svg viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.751L12 19.351l5.379-1.443.744-8.157z" fill="#1572B6"/></svg></span>
+                  <span class="carousel__stack-icon" title="JavaScript"><svg viewBox="0 0 630 630"><rect width="630" height="630" fill="#F7DF1E" rx="40"/><path d="M423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 36l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z" fill="#323330"/></svg></span>
+                </div>
+                <p class="carousel__card-desc">Professionele online aanwezigheid. Klanten bekijken werk en nemen contact op in seconden.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="underground__card underground__card--testimonials" id="testimonials">
+        <div class="stagger-testimonials reveal" id="stagger-testimonials">
+          <div class="stagger__stage">
+            <div class="stagger__card" data-tid="0">
+              <img src="https://i.pravatar.cc/150?img=32" alt="Jan Peeters"/>
+              <h3>&ldquo;Eindelijk iemand die normaal praat. Geen buzzwords, geen upselling. Hij luisterde naar ons probleem en leverde precies dat. Ons bestuur bespaart elke maand uren.&rdquo;</h3>
+              <p class="stagger__author">- Jan Peeters, Bestuurslid Boogschietclub De Pijl</p>
+            </div>
+            <div class="stagger__card" data-tid="1">
+              <img src="https://i.pravatar.cc/150?img=11" alt="Thomas Vermeulen"/>
+              <h3>&ldquo;Ik was sceptisch over het automatiseren van onze offertes, maar de resultaten spreken voor zich. Wat vroeger een hele namiddag kostte, duurt nu vijf minuten.&rdquo;</h3>
+              <p class="stagger__author">- Thomas Vermeulen, Zaakvoerder Vermeulen Marketing</p>
+            </div>
+            <div class="stagger__card" data-tid="2">
+              <img src="https://i.pravatar.cc/150?img=25" alt="Sarah De Smet"/>
+              <h3>&ldquo;Wat ik het meeste waardeer is de eerlijkheid. Hij vertelde ons dat we voor de helft van onze vragen geen app nodig hadden. Bespaarde ons geld.&rdquo;</h3>
+              <p class="stagger__author">- Sarah De Smet, Manager Sportclub Elan</p>
+            </div>
+            <div class="stagger__card" data-tid="3">
+              <img src="https://i.pravatar.cc/150?img=44" alt="Pieter Claes"/>
+              <h3>&ldquo;Professioneel, snel en altijd bereikbaar. De app die hij voor ons bouwde heeft onze werkwijze volledig veranderd.&rdquo;</h3>
+              <p class="stagger__author">- Pieter Claes, Voorzitter Tennisclub Leuven</p>
+            </div>
+            <div class="stagger__card" data-tid="4">
+              <img src="https://i.pravatar.cc/150?img=38" alt="Lisa Wouters"/>
+              <h3>&ldquo;Eenvoudig, doeltreffend en betaalbaar. Precies wat een kleine zaak als de onze nodig heeft.&rdquo;</h3>
+              <p class="stagger__author">- Lisa Wouters, Eigenaresse Bloemenatelier Rosa</p>
+            </div>
+          </div>
+          <div class="stagger__nav">
+            <button class="stagger__btn" id="stagger-prev" aria-label="Vorige">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="stagger__btn" id="stagger-next" aria-label="Volgende">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /underground__content -->
+  </section><!-- /underground -->
+
+  <!-- Contact -->
+  <section class="section section--alt" id="contact">
+    <div class="container">
+      <div class="reveal">
+        <h2 class="section__title section__title--center">Laten we praten</h2>
+        <p class="section__intro">Een taak die je tijd vreet? Een proces dat schreeuwt om automatisering? Of gewoon benieuwd wat er mogelijk is? Laten we een gesprek hebben — vrijblijvend, zonder verkooppraatje.</p>
+      </div>
+      <div class="contact-grid reveal">
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Dit is een prototype — formulier niet verbonden.');">
+          <div class="form-group">
+            <label for="name" class="form-label">Naam</label>
+            <input type="text" id="name" class="form-input" placeholder="Je naam" required>
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" id="email" class="form-input" placeholder="je@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Bericht</label>
+            <textarea id="message" class="form-input form-textarea" placeholder="Vertel me over je uitdaging..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Verstuur bericht</button>
+        </form>
+        <div class="contact-social">
+          <h3 class="contact-social__title">Vind me online</h3>
+          <div class="contact-social__links">
+            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="mailto:hello@example.com" class="social-link" aria-label="E-mail">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span>E-mail</span>
+            </a>
+          </div>
+          <p class="contact-social__note">Liever een kort gesprek? Stuur me een bericht op LinkedIn — ik reageer binnen 24 uur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__content">
+        <p class="footer__copy">&copy; <span id="year"></span> Enabl'IT. Met zorg gebouwd.</p>
+        <nav class="footer__nav">
+          <a href="#about">Over mij</a>
+          <a href="#mission">Missie</a>
+          <a href="#projects">Projecten</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="tree.js"></script>
+</body>
+</html>
